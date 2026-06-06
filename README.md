@@ -1,2 +1,2 @@
 # chatbot_project
-React Project
+React project
