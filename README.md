@@ -1,2 +1,2 @@
 # chatbot_project
-React project
+Project to learn react.js
