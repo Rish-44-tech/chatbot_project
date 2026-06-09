@@ -4,33 +4,46 @@ import './ChatInput.css';
 
 export default function ChatInput({chatMessages,setChatMessages}){
     const [inputVal,setInputVal]=useState("");
+    const [isLoading,setIsLoading]=useState(false);
     function saveInput(event){
         setInputVal(event.target.value);
     }
 
-    function sendMessage(){
+    async function sendMessage(){
         if(inputVal===""){
             return;
         }
-        const response=Chatbot.getResponse(inputVal);
-        setChatMessages([...chatMessages,{
+        if(isLoading){
+            return;
+        }
+        const newCm=[...chatMessages,{
             message:inputVal,
             sender:"user",
             id:crypto.randomUUID()
-        },{
-            message:response,
+        }];
+        setChatMessages([...newCm,{
+            message:"Loading..",
             sender:"robot",
             id:crypto.randomUUID()
         }]);
         setInputVal("");
+        setIsLoading(true);
+        const response=await Chatbot.getResponseAsync(inputVal);
+        setIsLoading(false);
+        setChatMessages([...newCm,{
+            message:response,
+            sender:"robot",
+            id:crypto.randomUUID()
+        }]);
     }
 
     return (
         <div className="input-container">
         <input
             type="text"
-            placeholder="Send a message to Chatbot"
-            size={30} onChange={saveInput}
+            placeholder="Send a message to chatbot.."
+            size={30}
+            onChange={saveInput}
             value={inputVal}
             className="chat-input"
             onKeyDown={(e)=>{
