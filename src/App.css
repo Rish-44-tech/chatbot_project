@@ -15,3 +15,15 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+.welcome-message-top{
+    text-align: center;
+    color: gray;
+    margin: 0;
+}
+
+.welcome-message-bottom{
+    text-align: center;
+    color: gray;
+    margin-top:20px;   
+}

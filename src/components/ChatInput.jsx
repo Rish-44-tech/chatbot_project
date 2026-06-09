@@ -22,7 +22,7 @@ export default function ChatInput({chatMessages,setChatMessages}){
             id:crypto.randomUUID()
         }];
         setChatMessages([...newCm,{
-            message:"Loading..",
+            message:<img src="https://supersimple.dev/images/loading-spinner.gif" className="loading-spinner"></img>,
             sender:"robot",
             id:crypto.randomUUID()
         }]);
@@ -36,12 +36,11 @@ export default function ChatInput({chatMessages,setChatMessages}){
             id:crypto.randomUUID()
         }]);
     }
-
     return (
         <div className="input-container">
         <input
             type="text"
-            placeholder="Send a message to chatbot.."
+            placeholder="Send a message to chatbot..."
             size={30}
             onChange={saveInput}
             value={inputVal}

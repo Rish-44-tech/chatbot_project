@@ -6,11 +6,11 @@ import './App.css'
 
 function AppBottom({setTB,chatMessages,setChatMessages}){
      function moveTop(){
-        console.log(2);
         setTB("top");
      }
     return (
         <div className="app-container">
+        {chatMessages.length===0 && <p className="welcome-message-bottom">Welcome to my chatbot project! Send a message using the textbox below!</p>}
         <ChatMessages chatMessages={chatMessages}/>
         <ChatInput chatMessages={chatMessages} setChatMessages={setChatMessages}/>
         <button className="pos-switch" onClick={moveTop}>Move textbox to Top</button>
@@ -20,12 +20,12 @@ function AppBottom({setTB,chatMessages,setChatMessages}){
 
 function AppTop({setTB,chatMessages,setChatMessages}){
      function moveBottom(){
-        console.log(1);
         setTB("bottom");
      }
     return (
         <div className="app-container">
         <ChatInput chatMessages={chatMessages} setChatMessages={setChatMessages}/>
+        {chatMessages.length===0 && <p className="welcome-message-top">Welcome to my chatbot project! Send a message using the textbox above!</p>}
         <ChatMessages chatMessages={chatMessages}/>
         <button className="pos-switch" onClick={moveBottom}>Move textbox to Bottom</button>
         </div>
