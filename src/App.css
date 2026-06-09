@@ -6,63 +6,6 @@
     flex-direction: column;
 }
 
-.send-button{
-    background-color: rgb(25, 135, 84);
-    color: white;
-    padding: 12px 20px;
-    border-radius: 10px;
-    border: 0px;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-.chat-input{
-    padding: 12px 15px;
-    border-radius: 10px;
-    border-width: 1px;
-    margin-right: 10px;
-    font-size: 15px;
-    flex-grow: 1;
-}
-
-.input-container{
-    display: flex;
-    margin: 20px 0;
-}
-
-.user-message{
-    display: flex;
-    justify-content: end;
-    align-items: start;
-}
-
-.robot-message{
-    display: flex;
-    align-items: start;
-}
-
-.message-text{
-    background-color: #EEEE;
-    padding:15px 20px;
-    border-radius: 10px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    margin-right: 10px;
-    margin-left: 10px;
-    max-width: 300px;
-}
-
-.chat-img{
-    width: 45px;
-}
-
-.message-container{
-    flex-grow: 1;
-    margin-top: 20px;
-    overflow: scroll;
-    scrollbar-width: none;
-}
-
 .pos-switch{
     margin: 10px auto 20px auto;
     color: rgb(25, 135, 84);
