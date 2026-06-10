@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { Chatbot } from 'supersimpledev';
 import ChatInput from './components/ChatInput';
 import ChatMessages from './components/ChatMessages';
 import ChatMessage from './components/ChatMessage';
@@ -34,6 +35,17 @@ function AppTop({setTB,chatMessages,setChatMessages}){
 export default function App(){
     const[TB,setTB]=useState("top");
     const [chatMessages,setChatMessages]=useState([]);
+    useEffect(()=>{
+        Chatbot.addResponses({
+            "hi":"Hi! How can I help?",
+            "Give a random number between 1 and 100":()=>{
+                return String(Math.ceil(Math.random()*100));
+            },
+            
+        })
+        Chatbot.unsuccessfulResponse=`Sorry, I didn't quite understand that. Currently, I only know how to flip a coin, roll a dice, generate a random number between 1 and 100 or get today's date. Let me know how I can help!`;
+    },[]);
+
     if(TB==="top"){
         return (
             <>
