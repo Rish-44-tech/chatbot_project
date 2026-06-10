@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Chatbot } from "supersimpledev";
+import dayjs from "dayjs";
 import './ChatInput.css';
 
 export default function ChatInput({chatMessages,setChatMessages}){
@@ -8,7 +9,6 @@ export default function ChatInput({chatMessages,setChatMessages}){
     function saveInput(event){
         setInputVal(event.target.value);
     }
-
     async function sendMessage(){
         if(inputVal===""){
             return;
@@ -19,12 +19,14 @@ export default function ChatInput({chatMessages,setChatMessages}){
         const newCm=[...chatMessages,{
             message:inputVal,
             sender:"user",
-            id:crypto.randomUUID()
+            id:crypto.randomUUID(),
+            time:dayjs(dayjs().valueOf()).format("h:mma")
         }];
         setChatMessages([...newCm,{
             message:<img src="https://supersimple.dev/images/loading-spinner.gif" className="loading-spinner"></img>,
             sender:"robot",
-            id:crypto.randomUUID()
+            id:crypto.randomUUID(),
+            time:null
         }]);
         setInputVal("");
         setIsLoading(true);
@@ -33,7 +35,8 @@ export default function ChatInput({chatMessages,setChatMessages}){
         setChatMessages([...newCm,{
             message:response,
             sender:"robot",
-            id:crypto.randomUUID()
+            id:crypto.randomUUID(),
+            time:dayjs(dayjs().valueOf()).format("h:mma")
         }]);
     }
     return (

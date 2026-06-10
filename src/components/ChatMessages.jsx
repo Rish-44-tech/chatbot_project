@@ -21,6 +21,7 @@ export default function ChatMessages({chatMessages}){
             message={element.message}
             sender={element.sender}
             key={element.id}
+            time={element.time}
         />
         );
     })}
