@@ -4,14 +4,14 @@ import './ChatMessage.css';
 
 export default function ChatMessage({message,sender,time}){
     return(
-        <div className={sender+"-message"}>
-            {sender==="robot" && <img src={robo_img} className="chat-img"></img>}
-            <div className="message-text">
+        <div classNameName={sender+"-message"}>
+            {sender==="robot" && <img src={robo_img} classNameName="chat-img"></img>}
+            <div classNameName="message-text">
                 {message}
                 <br/>
-                <span className='time'>{time}</span>
+                <span classNameName='time'>{time}</span>
             </div>
-            {sender==="user" && <img src={user_img} className="chat-img"></img>}
+            {sender==="user" && <img src={user_img} classNameName="chat-img"></img>}
         </div>
     );
 }

@@ -14,7 +14,7 @@ function useAutoScroll(dependencies){
 export default function ChatMessages({chatMessages}){
     const chatMessagesRef=useAutoScroll(chatMessages);
     return (
-    <div className="message-container" ref={chatMessagesRef}>
+    <div classNameName="message-container" ref={chatMessagesRef}>
     {chatMessages.map((element)=>{
     return (
         <ChatMessage

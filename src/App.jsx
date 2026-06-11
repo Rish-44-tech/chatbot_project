@@ -10,11 +10,11 @@ function AppBottom({setTB,chatMessages,setChatMessages}){
         setTB("top");
      }
     return (
-        <div className="app-container">
-        {chatMessages.length===0 && <p className="welcome-message-bottom">Welcome to my chatbot project! Send a message using the textbox below!</p>}
+        <div classNameName="app-container">
+        {chatMessages.length===0 && <p classNameName="welcome-message-bottom">Welcome to my chatbot project! Send a message using the textbox below!</p>}
         <ChatMessages chatMessages={chatMessages}/>
         <ChatInput chatMessages={chatMessages} setChatMessages={setChatMessages}/>
-        <button className="pos-switch" onClick={moveTop}>Move textbox to Top</button>
+        <button classNameName="pos-switch" onClick={moveTop}>Move textbox to Top</button>
         </div>
     );
 }
@@ -24,11 +24,11 @@ function AppTop({setTB,chatMessages,setChatMessages}){
         setTB("bottom");
      }
     return (
-        <div className="app-container">
+        <div classNameName="app-container">
         <ChatInput chatMessages={chatMessages} setChatMessages={setChatMessages}/>
-        {chatMessages.length===0 && <p className="welcome-message-top">Welcome to my chatbot project! Send a message using the textbox above!</p>}
+        {chatMessages.length===0 && <p classNameName="welcome-message-top">Welcome to my chatbot project! Send a message using the textbox above!</p>}
         <ChatMessages chatMessages={chatMessages}/>
-        <button className="pos-switch" onClick={moveBottom}>Move textbox to Bottom</button>
+        <button classNameName="pos-switch" onClick={moveBottom}>Move textbox to Bottom</button>
         </div>
     );
 }

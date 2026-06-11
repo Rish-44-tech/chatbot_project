@@ -23,7 +23,7 @@ export default function ChatInput({chatMessages,setChatMessages}){
             time:dayjs(dayjs().valueOf()).format("h:mma")
         }];
         setChatMessages([...newCm,{
-            message:<img src="https://supersimple.dev/images/loading-spinner.gif" className="loading-spinner"></img>,
+            message:<img src="https://supersimple.dev/images/loading-spinner.gif" classNameName="loading-spinner"></img>,
             sender:"robot",
             id:crypto.randomUUID(),
             time:null
@@ -40,25 +40,25 @@ export default function ChatInput({chatMessages,setChatMessages}){
         }]);
     }
     return (
-        <div className="input-container">
+        <div classNameName="input-container">
         <input
             type="text"
             placeholder="Send a message to chatbot..."
             size={30}
             onChange={saveInput}
             value={inputVal}
-            className="chat-input"
+            classNameName="chat-input"
             onKeyDown={(e)=>{
                 if(e.key==="Enter"){
                     sendMessage();
                 }
             }}/>
-        <button onClick={sendMessage} className="send-button">Send</button>
+        <button onClick={sendMessage} classNameName="send-button">Send</button>
         <button onClick={()=>{
             localStorage.setItem("messages","[]");
             setChatMessages([]);
         }}
-        className="clear-button">
+        classNameName="clear-button">
             Clear
         </button>
         </div>
